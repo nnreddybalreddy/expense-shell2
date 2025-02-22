@@ -22,7 +22,7 @@ else
 fi
 
 VALIDATE(){
-    if [ $1 -ne 0 ]
+    if [ $1 -eq 0 ]
     then 
         echo -e "$2 $G success $N"
     else 
