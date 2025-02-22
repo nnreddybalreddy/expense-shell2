@@ -18,27 +18,27 @@ else
     exit 1    
 fi
 
-# VALIDATE(){
-#     if [ $1 -eq 0 ]
-#     then 
-#         echo -e "$G $2 is success $N"
-#     else    
-#         echo -e "$G $2 is fail $N"
-# }
+VALIDATE(){
+    if [ $1 -eq 0 ]
+    then 
+        echo -e "$G $2 is success $N"
+    else    
+        echo -e "$G $2 is fail $N"
+}
 
 
 dnf install mysql-server -y &>>$LOGFILE
-#VALIDATE $? "mysql server installation"
+VALIDATE $? "mysql server installation"
 
 
 systemctl enable mysqld &>>$LOGFILE
-#VALIDATE $? "enable mysqld"
+VALIDATE $? "enable mysqld"
 
 systemctl start mysqld &>>$LOGFILE
-#VALIDATE $? "start mysqld"
+VALIDATE $? "start mysqld"
 
 mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
-#VALIDATE $? "password set "
+VALIDATE $? "password set "
 
 mysql -h db.narendra.shop -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
 
