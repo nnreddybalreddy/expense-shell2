@@ -51,9 +51,6 @@ VALIDATE $? "enable mysqld"
 systemctl start mysqld &>>$LOGFILE
 VALIDATE $? "start mysqld"
 
-mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
-VALIDATE $? "password set "
-
 mysql -h db.narendra.shop -uroot -p${mysql_root_password} -e 'show databases;' &>>$LOGFILE
 
 if [ $? -ne 0 ]
