@@ -22,11 +22,12 @@ else
 fi
 
 VALIDATE(){
-    if [ $1 -eq 0 ]
-    then 
-        echo -e "$2 $G is success $N"
-    else    
-        echo -e "$2 $R is fail $N"
+    echo $1
+    # if [ $? -eq 0 ]
+    # then 
+    #     echo -e "$2 $G is success $N"
+    # else    
+    #     echo -e "$2 $R is fail $N"
 }
 
 # VALIDATE(){
