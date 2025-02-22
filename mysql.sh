@@ -18,13 +18,13 @@ else
     exit 1    
 fi
 
-VALIDATE(){
-    if [ $1 -eq 0 ]
-    then 
-        echo -e "$G $2 is success $N"
-    else    
-        echo -e "$G $2 is fail $N"
-}
+# VALIDATE(){
+#     if [ $1 -eq 0 ]
+#     then 
+#         echo -e "$G $2 is success $N"
+#     else    
+#         echo -e "$G $2 is fail $N"
+# }
 
 
 dnf install mysql-server -y &>>$LOGFILE
