@@ -8,6 +8,9 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
+echo "Enter password"
+read mysql_root_password
+
 USERID=$(id -u)
 
 if [ $USERID -eq  0 ]
